@@ -23,5 +23,11 @@ decoded jwt:
 
 <image src = "decoded-jwt.PNG">
 
+### Authorisation
+Client side sends a request to server with jwt token:
+<image src="get-req-with-jwt.PNG">
+
+The server checks existance of jwt token. The tocken is checked with the customJwtAuthenticationFilter object in the customJwtAuthenticationFilter class. Then the role of the user passed to spring sequrity. if the user authenticated and has access to the end point the OK response returned to yhe user.
+
 ### Source
 [This](https://www.javainuse.com/webseries/spring-security-jwt/chap3) tutorial used while doing this troject: [link](https://www.javainuse.com/webseries/spring-security-jwt/chap3)
