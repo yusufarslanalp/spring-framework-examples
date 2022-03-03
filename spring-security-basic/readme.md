@@ -29,5 +29,8 @@ Client side sends a request to server with jwt token:
 
 The server checks existance of jwt token. The tocken is checked with the customJwtAuthenticationFilter object in the customJwtAuthenticationFilter class. Then the role of the user passed to spring sequrity. if the user authenticated and has access to the end point the OK response returned to yhe user.
 
+### jwt epiration
+[This]( https://www.javainuse.com/webseries/spring-security-jwt/chap4 ) tutorial says spring has an issue with jwt expiration exception. Shows how to solve that probleb. Soon tihis documentaion and source code will be updated.
+
 ### Source
 [This](https://www.javainuse.com/webseries/spring-security-jwt/chap3) tutorial used while doing this troject: [link](https://www.javainuse.com/webseries/spring-security-jwt/chap3)
