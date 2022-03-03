@@ -16,3 +16,9 @@ BCryptPasswordEncoder:
 ### Authenticate
 
 <image src="auth-post.PNG">
+
+jwt token: "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTY0NjMwNzcyNCwiaWF0IjoxNjQ2Mjg5NzI0fQ.KNGrYQD3pkzHeJ1J2gOx1JpWSU5hXNBxf2dsifdGNeBv9kJ4csUPA6scfltMyJmCwe5KYi2sd15bPahdKwaVWQ"
+
+decoded jwt:
+
+<image src = "decoded-jwt.PNG">
