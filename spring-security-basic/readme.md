@@ -22,3 +22,6 @@ jwt token: "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI
 decoded jwt:
 
 <image src = "decoded-jwt.PNG">
+
+### Source
+[This](https://www.javainuse.com/webseries/spring-security-jwt/chap3) tutorial used while doing this troject: [link](https://www.javainuse.com/webseries/spring-security-jwt/chap3)
