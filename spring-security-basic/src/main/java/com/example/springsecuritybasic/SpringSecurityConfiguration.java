@@ -26,8 +26,8 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter{
     @Autowired
     private JwtAuthenticationEntryPoint unauthorizedHandler;
 
-
-    public PasswordEncoder passwordEncoder(){
+    @Bean
+    public static PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
 
@@ -47,18 +47,9 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter{
         http.csrf().disable()
                 .authorizeRequests().antMatchers("/helloadmin").hasRole("ADMIN")
                 .antMatchers("/hellouser").hasAnyRole("USER","ADMIN")
-                .antMatchers("/authenticate").permitAll().anyRequest().authenticated()
-                //if any exception occurs call this
-                .and().exceptionHandling()
-                .authenticationEntryPoint(unauthorizedHandler).and().
-                // make sure we use stateless session; session won't be used to
-                // store user's state.
-                        sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-// 		Add a filter to validate the tokens with every request
-        http.addFilterBefore(customJwtAuthenticationFilter,
-                UsernamePasswordAuthenticationFilter.class);
-
+                .antMatchers("/authenticate", "/register").permitAll().anyRequest().authenticated()
+                .and().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).
+                and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).
+                and().addFilterBefore(customJwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }
 }

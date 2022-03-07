@@ -47,4 +47,9 @@ public class AuthenticationController {
         return ResponseEntity.ok(new AuthenticationResponse(token));
     }
 
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public ResponseEntity<?> saveUser(@RequestBody MyUser user) throws Exception {
+        return ResponseEntity.ok(userDetailsService.save(user).getUsername());
+    }
+
 }
