@@ -31,12 +31,13 @@ public class JwtUtil {
     private String secret;
     private int jwtExpirationInMs;
 
-    @Value("${jwt.secret:javainuse}")
+    @Value("${jwt.secret}")
     public void setSecret(String secret) {
         this.secret = secret;
     }
 
-    @Value("${jwt.expirationDateInMs:18000000}")
+
+    @Value("${jwt.expirationDateInMs}")
     public void setJwtExpirationInMs(int jwtExpirationInMs) {
         this.jwtExpirationInMs = jwtExpirationInMs;
     }
