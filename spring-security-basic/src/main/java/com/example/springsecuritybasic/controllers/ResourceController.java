@@ -1,4 +1,4 @@
-package com.example.springsecuritybasic;
+package com.example.springsecuritybasic.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

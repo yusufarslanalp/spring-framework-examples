@@ -1,5 +1,9 @@
-package com.example.springsecuritybasic;
+package com.example.springsecuritybasic.controllers;
 
+import com.example.springsecuritybasic.*;
+import com.example.springsecuritybasic.models.AuthenticationRequest;
+import com.example.springsecuritybasic.models.AuthenticationResponse;
+import com.example.springsecuritybasic.models.MyUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,10 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.springsecuritybasic.AuthenticationRequest;
-import com.example.springsecuritybasic.JwtUtil;
-import com.example.springsecuritybasic.AuthenticationResponse;
 
 
 @RestController

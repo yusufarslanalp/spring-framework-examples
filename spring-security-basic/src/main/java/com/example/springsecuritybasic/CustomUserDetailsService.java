@@ -13,8 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.example.springsecuritybasic.MyUser;
-import com.example.springsecuritybasic.UserRepository;
+import com.example.springsecuritybasic.models.MyUser;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

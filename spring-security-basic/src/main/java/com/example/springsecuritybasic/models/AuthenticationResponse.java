@@ -1,4 +1,4 @@
-package com.example.springsecuritybasic;
+package com.example.springsecuritybasic.models;
 
 public class AuthenticationResponse {
 
