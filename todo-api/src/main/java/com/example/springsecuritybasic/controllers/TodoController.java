@@ -1,16 +1,20 @@
 package com.example.springsecuritybasic.controllers;
 
+import com.example.springsecuritybasic.models.Todo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping( )
-public class ResourceController {
+@RequestMapping( "/todo" )
+public class TodoController {
 
     @GetMapping("")
-    public String helloUser(){
-        return "Hello User";
+    public List<Todo> todos(){
+
+
     }
 
     @RequestMapping({"/helloadmin"})

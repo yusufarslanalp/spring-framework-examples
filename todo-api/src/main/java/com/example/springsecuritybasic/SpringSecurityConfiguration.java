@@ -1,5 +1,6 @@
 package com.example.springsecuritybasic;
 
+import com.example.springsecuritybasic.services.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

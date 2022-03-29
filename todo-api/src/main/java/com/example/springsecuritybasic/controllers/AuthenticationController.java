@@ -4,6 +4,7 @@ import com.example.springsecuritybasic.*;
 import com.example.springsecuritybasic.models.AuthenticationRequest;
 import com.example.springsecuritybasic.models.AuthenticationResponse;
 import com.example.springsecuritybasic.models.MyUser;
+import com.example.springsecuritybasic.services.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
