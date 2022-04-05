@@ -1,7 +1,5 @@
 package com.example.springsecuritybasic.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 @Entity
@@ -20,7 +18,7 @@ public class Todo {
     @Column
     private boolean completed;
     @Column
-    private String currentTime;
+    private String createdTime;
 
     public String getHead() {
         return head;
@@ -46,11 +44,11 @@ public class Todo {
         this.completed = completed;
     }
 
-    public String getCurrentTime() {
-        return currentTime;
+    public String getCreatedTime() {
+        return createdTime;
     }
 
-    public void setCurrentTime(String currentTime) {
-        this.currentTime = currentTime;
+    public void setCreatedTime(String createdTime) {
+        this.createdTime = createdTime;
     }
 }

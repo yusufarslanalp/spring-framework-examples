@@ -18,6 +18,10 @@ public class MyUser {
     @Column
     private String role;
 
+    public long getId() {
+        return id;
+    }
+
     public String getRole() {
         return role;
     }
