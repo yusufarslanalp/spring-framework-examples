@@ -20,16 +20,23 @@ public class TodoService {
     @Autowired
     UserRepository userRepository;
 
-    public List<Todo> getTodos(){
+    private Long findUserId(){
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
         String username = userDetails.getUsername();
-
-
-
         MyUser user = userRepository.findByUsername( username );
-        return todoRepository.findByuserId( user.getId() );
+        return user.getId();
+    }
 
+    public List<Todo> getTodos(){
+        Long userId = findUserId();
+        return todoRepository.findByuserId( userId );
+    }
+
+    public void setTodo( Todo todo ){
+        Long userId = findUserId();
+        todo.setUserId( userId );
+        todoRepository.save( todo );
     }
 
 
