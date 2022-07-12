@@ -1,5 +1,7 @@
 package com.example.DataRelationsJPA.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +17,7 @@ public class Photo {
     private String urlMedium;
     private String urlLarge;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "photo")
     private Book book;
 
