@@ -17,6 +17,14 @@ public class Category {
     @Column(unique = true, nullable = false)
     private String category;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "parent_id")
+    private Category parent;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "parent")
+    private Collection<Category> children;
+
     @JsonIgnore
     @ManyToMany(mappedBy = "categories")
     private Collection<Book> books;
@@ -50,5 +58,21 @@ public class Category {
 
     public void setBooks(Collection<Book> books) {
         this.books = books;
+    }
+
+    public Category getParent() {
+        return parent;
+    }
+
+    public void setParent(Category parent) {
+        this.parent = parent;
+    }
+
+    public Collection<Category> getChildren() {
+        return children;
+    }
+
+    public void setChildren(Collection<Category> children) {
+        this.children = children;
     }
 }
