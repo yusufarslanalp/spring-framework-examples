@@ -22,7 +22,7 @@ public class Book {
     @JoinColumn(name = "photo_id")
     private Photo photo;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(
             name = "books_categories",
             joinColumns = @JoinColumn(name = "book_id"),
