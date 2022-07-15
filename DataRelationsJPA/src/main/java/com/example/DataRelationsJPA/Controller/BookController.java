@@ -13,31 +13,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping( "" )
+@RequestMapping( "book" )
 public class BookController {
 
     @Autowired
     BookRepository bookRepository;
-
     @Autowired
     CategoryRepository categoryRepository;
 
-    @PostMapping("")
+    @PostMapping("save")
     public String saveBook( @RequestBody Book book  ) {
 
+        System.out.println( "fdsfsdf" );
 
 
 
         bookRepository.save( book );
 
-
         return "Hello Spring Boot...";
     }
 
-    @GetMapping
+    @GetMapping( "get/by/id" )
     public Book getBook( @RequestParam Long id ){
         Book b = bookRepository.findById( id ).get();
         return b;
+
+    }
+
+    @GetMapping( "get/all" )
+    public List<Book> getAllBooks(  ){
+        return bookRepository.findAll();
 
     }
 
