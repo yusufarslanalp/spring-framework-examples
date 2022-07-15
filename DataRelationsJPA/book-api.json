@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "aaa53b7a-d4b2-42ed-a1c6-d1ff6cd46381",
+		"name": "book collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14595151"
+	},
+	"item": [
+		{
+			"name": "save-book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"lighter2\",\r\n    \"totalPages\": 50,\r\n    \"photo\": {\r\n        \"urlSmall\": \"lighter-small\",\r\n        \"urlMedium\": \"lighter-medium\",\r\n        \"urlLarge\": \"lighter-large\"\r\n    },\r\n    \"categories\": [ {\"id\": 1}, {\"id\": 2} ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/book/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-book-all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/book/get/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"get",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-category-all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/category/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"category",
+						"all"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-category-by/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/category/by/id?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"category",
+						"by",
+						"id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-cetegory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\":{ \"category\":\"test3\" },\r\n    \"parentID\":1\r\n\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
