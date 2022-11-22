@@ -7,7 +7,7 @@ public class Engine {
         this.hp = hp;
     }
 
-    String sound(){
+    public String sound(){
         return "Engine sound with " + hp.toString() + " horse power";
     }
 }
