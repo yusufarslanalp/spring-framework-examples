@@ -20,6 +20,9 @@ public class Main {
         //spring created FromConstructorWithoutAutowire object. FromConstructorWithoutAutowire never annotated with autowire.
         FromConstructorWithoutAutowire fromConstructorWithoutAutowire = context.getBean(FromConstructorWithoutAutowire.class);
         fromConstructorWithoutAutowire.foo();
+
+        CarWrapper carWrapper = context.getBean( CarWrapper.class );
+        carWrapper.startCar();
     }
 
 
