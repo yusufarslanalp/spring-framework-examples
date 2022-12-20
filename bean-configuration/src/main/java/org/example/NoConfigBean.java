@@ -13,5 +13,8 @@ public class NoConfigBean {
 
     }
 
-
+    @Override
+    public String toString() {
+        return String.format( "name: %s", name );
+    }
 }

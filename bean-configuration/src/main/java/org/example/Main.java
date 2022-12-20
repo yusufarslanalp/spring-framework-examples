@@ -2,6 +2,10 @@ package org.example;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+import java.io.File;
 
 public class Main {
 
@@ -19,6 +23,7 @@ public class Main {
         System.out.println( bar.beanWithName.name );
         System.out.println( bar.beanWithNoName.name );
         bar.bar();
+        System.out.println();
 
 
 
@@ -26,9 +31,19 @@ public class Main {
         //But instantiated from application context.
         NoConfigBean noConfigBean = ctx.getBean(NoConfigBean.class);
         noConfigBean.foo();
-        noConfigBean.name = "asdf";
-        System.out.println( noConfigBean.name );
+        noConfigBean.name = "no configured bean";
+        System.out.println( noConfigBean );
 
-        System.out.println("Hello world!");
+        //XML configured beans
+        String basePath = new File("").getAbsolutePath();
+        System.out.println( "\nFollowing beans created with XML configurations:" );
+        ApplicationContext ac = new FileSystemXmlApplicationContext(basePath + "\\" + "configuration.xml");
+        XmlConfigBean xmlConfigBean = (XmlConfigBean) ac.getBean( "bean" );
+        System.out.println( xmlConfigBean );
+        XmlConfigBean XmlBeanWithSetters = (XmlConfigBean) ac.getBean( "XmlBeanWithSetters" );
+        System.out.println( XmlBeanWithSetters );
+        XmlConfigBean XmlBeanWithConstructor = (XmlConfigBean) ac.getBean( "XmlBeanWithConstructor" );
+        System.out.println( XmlBeanWithConstructor );
+
     }
 }

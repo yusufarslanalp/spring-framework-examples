@@ -12,6 +12,8 @@ public class Message {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
+
         return msg;
     }
 
