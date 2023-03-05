@@ -1,19 +1,18 @@
 package main_package.dto;
 
-import main_package.model.Ticket;
-import main_package.model.User;
+import main_package.model.Buyer;
 
 public class FlightTicketBookRequest {
 
-    private User user;
+    private Buyer buyer;
     private Ticket ticket;
 
-    public User getUser() {
-        return user;
+    public Buyer getUser() {
+        return buyer;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(Buyer buyer) {
+        this.buyer = buyer;
     }
 
     public Ticket getTicket() {

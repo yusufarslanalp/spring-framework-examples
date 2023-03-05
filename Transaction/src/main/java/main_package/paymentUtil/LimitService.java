@@ -14,7 +14,7 @@ public class LimitService {
         accounts.put( "3", new Double(3000) );
     }
 
-    boolean isLimitSufficient( String cardId, Double fare ){
+    public static boolean isLimitSufficient( String cardId, Double fare ){
         if( accounts.get( cardId ) >= fare ) return true;
         else return false;
     }

@@ -1,9 +1,8 @@
 package main_package.controller;
 
-import main_package.dto.FlightTicketBookRequest;
-import main_package.model.Ticket;
-import main_package.model.User;
-import main_package.repository.UserRepository;
+import main_package.model.Buyer;
+import main_package.model.Product;
+import main_package.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,20 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping( "user" )
-public class UserController {
+@RequestMapping( "product" )
+public class ProductController {
 
     @Autowired
-    UserRepository userRepository;
+    ProductRepository productRepository;
 
     @PostMapping
-    public String saveBook( @RequestBody User user  ) {
+    public String saveProduct( @RequestBody Product product) {
 
-        userRepository.save( user );
-        return user.toString();
+        productRepository.save( product );
+        return product.toString();
     }
-
-
-
 
 }
