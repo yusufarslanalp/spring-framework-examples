@@ -1,10 +1,8 @@
 package main_package.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
 public class Product {
 
     @Id
@@ -14,6 +12,9 @@ public class Product {
 
     @Column
     String title;
+
+    @Column
+    Double price;
 
     @Column
     Long stock;
@@ -32,6 +33,14 @@ public class Product {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public Long getStock() {

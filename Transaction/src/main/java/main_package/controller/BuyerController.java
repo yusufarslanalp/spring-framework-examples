@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping( "user" )
+@RequestMapping( "buyer" )
 public class BuyerController {
 
     @Autowired
-    BuyerRepository userRepository;
+    BuyerRepository buyerRepository;
 
     @PostMapping
     public String saveUser( @RequestBody Buyer buyer) {
 
-        userRepository.save(buyer);
+        buyerRepository.save(buyer);
         return buyer.toString();
     }
 

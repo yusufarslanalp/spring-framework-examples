@@ -1,5 +1,7 @@
 package main_package.paymentUtil;
 
+import main_package.exception.InsufficientCardLimit;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,9 +16,10 @@ public class LimitService {
         accounts.put( "3", new Double(3000) );
     }
 
-    public static boolean isLimitSufficient( String cardId, Double fare ){
-        if( accounts.get( cardId ) >= fare ) return true;
-        else return false;
+    public static void isLimitSufficient( String cardId, Double price ){
+        if( accounts.get( cardId ) <= price ){
+            throw new InsufficientCardLimit();
+        }
     }
 
 }
