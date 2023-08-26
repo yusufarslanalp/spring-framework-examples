@@ -1,5 +1,6 @@
 package com.example.httpClient;
 
+import model.Product;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
@@ -20,5 +21,12 @@ public class HttpClientApplication {
 		RestTemplate restTemplate = new RestTemplate();
 		String s = restTemplate.getForObject("http://localhost:8081/greet", String.class);
 		return s + " from http clint project";
+	}
+
+	@GetMapping("/getProduct")
+	public Product getProduct(  ){
+		RestTemplate restTemplate = new RestTemplate();
+		Product product = restTemplate.getForObject("http://localhost:8081/product", Product.class);
+		return product;
 	}
 }
